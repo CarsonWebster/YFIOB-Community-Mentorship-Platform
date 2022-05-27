@@ -3,6 +3,9 @@ module.exports = {
   content: [],
   theme: {
     extend: {},
+    // colors: {
+    //   blurple: '#5b50dd'
+    // },
   },
   plugins: [require("daisyui")],
 }

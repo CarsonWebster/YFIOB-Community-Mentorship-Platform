@@ -2,9 +2,11 @@
 // definePageMeta({
 //   middleware: 'auth'
 // })
+
 </script>
 
 <template>
+    <TitleCard title="Community Mentorship Platform" />
     <div class="w-full flex flex-col sm:flex-row flex-wrap sm:flex-nowrap py-4 flex-grow">
     <!-- fixed-width -->
     <div class="w-fixed w-full flex-shrink flex-grow-0 px-4">
@@ -16,10 +18,8 @@
     <main role="main" class="w-full flex-grow pt-1 px-3">
         <!-- fluid-width: main content goes here -->
         <ul>
-            <li><TwitterCard /></li>
-            <li><TwitterCard /></li>
-            <li><TwitterCard /></li>
-            <li><TwitterCard /></li>
+            <li><PostCard /></li>
+            <li><PostCard /></li>
         </ul>
     </main>
     <div class="w-fixed w-full flex-shrink flex-grow-0 px-2">
