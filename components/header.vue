@@ -16,9 +16,15 @@
                 <a href="#" class="mr-4 hover:underline md:mr-6 ">Account Settings</a>
             </li>
             <li>
-                <a href="#" class="hover:underline">Sign-Out</a>
+                <a onclick="signOut()" href="#" class="hover:underline">Sign-Out</a>
             </li>
         </ul>
     </div>
     </header>
 </template>
+
+<script setup>
+async function signOut() {
+  const { error } = await supabase.auth.signOut()
+}
+</script>

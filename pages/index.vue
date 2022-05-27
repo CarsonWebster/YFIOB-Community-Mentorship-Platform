@@ -1,6 +1,15 @@
+<script setup lang="ts">
+
+// definePageMeta({
+//   layout: false,
+//   middleware: 'auth'
+// });
+
+</script>
+
 <template>
-  <NuxtLayout name="default">
-    <!-- <template #header> Some header template content. Bitch </template> -->
+  <!-- <NuxtLayout name="default"> -->
+    <!-- <template #header> Some header template content </template> -->
 
   <div class="flex items-center justify-center h-screen">
     
@@ -9,11 +18,6 @@
     </div>
 	
   </div>
-  </NuxtLayout>
+  <!-- </NuxtLayout> -->
 </template>
 
-<script setup>
-definePageMeta({
-  layout: false,
-});
-</script>

@@ -9,6 +9,11 @@
   "devDependencies": {
     "@nuxtjs/supabase": "^0.1.14",
     "@nuxtjs/tailwindcss": "^5.0.4",
+    "@vueuse/core": "^8.5.0",
+    "@vueuse/nuxt": "^8.5.0",
     "nuxt": "3.0.0-rc.3"
+  },
+  "dependencies": {
+    "daisyui": "^2.15.1"
   }
 }
