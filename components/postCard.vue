@@ -17,7 +17,7 @@
         </div>
         <!-- Name and themes -->
         <div class="ml-1.5 text-sm leading-tight">
-          <span class="text-black dark:text-white font-bold block ">Carson Webster</span>
+          <span class="text-black dark:text-white font-bold block">Carson Webster</span>
           <div class="">
             <!-- <span class="text-gray-500 dark:text-gray-400 font-normal block">Themes buttons</span> -->
             <button class="btn btn-primary btn-xs">Engineering</button>
