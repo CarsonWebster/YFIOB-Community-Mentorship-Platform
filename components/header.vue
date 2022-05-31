@@ -11,10 +11,10 @@
                 <a href="events" class="mr-4 hover:underline md:mr-6 ">Events</a>
             </li>
             <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6">Messages</a>
+                <a href="messages" class="mr-4 hover:underline md:mr-6">Messages</a>
             </li>
             <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6 ">Account Settings</a>
+                <a href="settings" class="mr-4 hover:underline md:mr-6 ">Account Settings</a>
             </li>
             <li>
                 <a onclick="signOut()" href="#" class="hover:underline">Sign-Out</a>
