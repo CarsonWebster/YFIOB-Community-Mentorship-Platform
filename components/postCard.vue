@@ -1,3 +1,11 @@
+<script setup lang="ts">
+interface PostCardProps {
+  title?: string;
+  content?: string;
+}
+const psotCardprops = defineProps<PostCardProps>();
+</script>
+
 <template>
     <!-- component -->
     <!-- Background -->
@@ -17,7 +25,8 @@
         </div>
         <!-- Name and themes -->
         <div class="ml-1.5 text-sm leading-tight">
-          <span class="text-black dark:text-white font-bold block">Carson Webster</span>
+          <!-- <span class="text-black dark:text-white font-bold block">Carson Webster</span> -->
+          <span class="text-black dark:text-white font-bold block">{{title}}</span>
           <div class="">
             <!-- <span class="text-gray-500 dark:text-gray-400 font-normal block">Themes buttons</span> -->
             <button class="btn btn-primary btn-xs">Engineering</button>
@@ -39,7 +48,8 @@
         
     </div>
     <!-- Card body -->
-    <p class="text-black dark:text-white block text-xl leading-snug mt-3">This is an example of a text post any mentor can post. They can provide insightful information to students or provide links to helpful resources for careers and other info.</p>
+    <!-- <p class="text-black dark:text-white block text-xl leading-snug mt-3">This is an example of a text post any mentor can post. They can provide insightful information to students or provide links to helpful resources for careers and other info.</p> -->
+    <p class="text-black dark:text-white block text-xl leading-snug mt-3">{{content}}</p>
     <!-- Card Image -->
     <img class="mt-2 rounded-2xl border border-gray-100 dark:border-gray-700" src="https://www.santacruzsbdc.org/wp-content/uploads/sites/4/2021/05/YFIOB-1024x607.jpg"/>
     <!-- time and date -->

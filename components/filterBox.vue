@@ -1,3 +1,11 @@
+<script setup lang="ts">
+const myFilters = ["Engineering", "Science", "Theater","Acting","Broadway"];
+// const mynewfilters =  [{ name: 'Engineering' }, { name: 'Science' },{ name: 'Acting' },{ name: 'Theater' },{ name: 'Broadway' },]
+var seclectedFilters = [];
+
+</script>
+
+
 <template>
     <div class="">
         <div class="flex">
@@ -7,7 +15,12 @@
         </div>
         <!-- Filters Form -->
         <div class="form-control">
-            <label class="label cursor-pointer">
+            <label v-for="myfilter in myFilters" v-bind:key="myfilter" class="label cursor-pointer">
+                <!-- <span class="label-text">{{myfilter}}</span> 
+                <input type="checkbox" class="toggle toggle-primary" checked /> -->
+                <button class="btn btn-primary btn-xs">{{myfilter}}</button>
+            </label>
+            <!-- <label class="label cursor-pointer">
                 <span class="label-text">Engneering</span> 
                 <input type="checkbox" class="toggle toggle-primary" checked />
             </label>
@@ -26,7 +39,7 @@
             <label class="label cursor-pointer">
                 <span class="label-text">Broadway</span> 
                 <input type="checkbox" class="toggle toggle-primary" checked />
-            </label>
+            </label> -->
         </div>
     </div>
 </template>

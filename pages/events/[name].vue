@@ -8,7 +8,7 @@ const myroutename = myroute.params.name;
 // const restaurant = restaurants.find(r => r.name === name);
 
 useMeta({
-  title: true ? myroutename : "404 - Restaurant Not Found",
+  title: true ? myroutename : "404 - Event Not Found",
   meta: [
     {
       name: "viewport",
@@ -24,7 +24,7 @@ useMeta({
     <div>
         <!--  Top Header -->
       <div class="bg-[#5b50dd] w-auto h-auto flex justify-flex items-center">
-        <h1 class=" w-96 font-mono font-extrabold text-center text-5xl text-antialiased text-white m-6">Science and Innovation Fair</h1>
+        <h1 class=" w-96 font-mono font-extrabold text-center text-5xl text-antialiased text-white m-6">{{myroutename}}</h1>
         <div class=" w-auto "></div>
       </div>
       <!--  Second Header -->

@@ -1,25 +1,38 @@
-<script setup>
+<script setup lang="ts">
 // definePageMeta({
 //   middleware: 'auth'
 // })
 
+const user = useSupabaseUser()
+const {supabase} = useSupabase()
+
+const { data: posts } = useAsyncData('posts', async () => {
+  const { data: posts, error } = await supabase.from('posts').select('*')
+    // console.log("Return data")
+    // console.log(posts)
+  return posts
+})
+
+
 </script>
 
 <template>
+    <!-- <pre v-for="post in posts" v-bind:key="post.id">{{post.title}} : {{post.content}}</pre> -->
     <TitleCard title="Community Mentorship Platform" />
     <div class="w-full flex flex-col sm:flex-row flex-wrap sm:flex-nowrap py-4 flex-grow">
     <!-- fixed-width -->
     <div class="w-fixed w-full flex-shrink flex-grow-0 px-4">
         <div class="sticky top-0 p-4 w-full h-full">
-            <!-- nav goes here -->
+            <!-- leftside goes here -->
             <FilterBox />
         </div>
     </div>
     <main role="main" class="w-full flex-grow pt-1 px-3">
         <!-- fluid-width: main content goes here -->
         <ul>
-            <li><PostCard /></li>
-            <li><PostCard /></li>
+            <li v-for="post in posts" v-bind:key="post.id">
+                <PostCard :title='post.name' :content='post.content' />
+            </li>
         </ul>
     </main>
     <div class="w-fixed w-full flex-shrink flex-grow-0 px-2">
@@ -42,4 +55,5 @@
         min-width: 230px;
     }
 }
+
 </style>
