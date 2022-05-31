@@ -3,7 +3,7 @@ interface PostCardProps {
   title?: string;
   content?: string;
 }
-const psotCardprops = defineProps<PostCardProps>();
+const postCardprops = defineProps<PostCardProps>();
 </script>
 
 <template>
