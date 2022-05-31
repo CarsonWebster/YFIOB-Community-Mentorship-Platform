@@ -11,7 +11,7 @@ const psotCardprops = defineProps<PostCardProps>();
     <!-- Background -->
 <div class="bg-white dark:bg-black p-1 flex items-center justify-center">
     <!-- Padded Card -->
-  <div class="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-800 p-4 border max-w-xl">
+  <div class="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-800 p-4 border max-w-xl w-max">
     <!-- Card Header -->
     <div class="flex justify-between">
         <!-- Name and profile pic -->
