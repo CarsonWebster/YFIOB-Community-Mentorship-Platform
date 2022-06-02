@@ -3,8 +3,11 @@
 //   middleware: 'auth'
 // })
 
-const user = useSupabaseUser()
-const {supabase} = useSupabase()
+// const user = useSupabaseUser()
+// const {user} = useAuth();
+// console.log(user);
+// console.log(user.id);
+const {supabase} = useSupabase();
 
 const { data: posts } = useAsyncData('posts', async () => {
   const { data: posts, error } = await supabase.from('posts').select('*')
@@ -31,7 +34,7 @@ const { data: posts } = useAsyncData('posts', async () => {
         <!-- fluid-width: main content goes here -->
         <ul>
             <li v-for="post in posts" v-bind:key="post.id">
-                <PostCard :title='post.name' :content='post.content' />
+                <PostCard :title='post.name' :content='post.content' :author='post.author'/>
             </li>
         </ul>
     </main>

@@ -4,7 +4,7 @@
 interface TitleCardProps {
   title?: string;
 }
-const titleCardprops = defineProps<TitleCardProps>();
+const titleCardProps = defineProps<TitleCardProps>();
 </script>
 
 <template>

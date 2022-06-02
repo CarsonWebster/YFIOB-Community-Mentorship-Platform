@@ -4,6 +4,13 @@
 //   layout: false,
 //   middleware: 'auth'
 // });
+const {supabase} = useSupabase()
+const { data: events } = useAsyncData('events', async () => {
+    const { data: events, error } = await supabase.from('events').select('*')
+        // console.log("Return data")
+        // console.log(events)
+    return events
+})
 
 </script>
 
@@ -50,10 +57,10 @@
                     <p class="font-mono text-lg font-bold inline-flex pr-6">Results:</p>
                     <ul class="">
                         <!-- <li><button class="btn btn-xs">Age Range</button></li> -->
-                        <li><EventCard name="Science and Innovation Fair: March 8th, 2022 from 4:30 to 6:30" /></li>
-                        <li><EventCard name="College Cornicopia: April 2nd, 2022 from 3:00 to 5:00" /></li>
+                        <li v-for="event in events" v-bind:key="event"><EventCard :eventName='event.name' :eventTitle='event.title' /></li>
+                        <!-- <li><EventCard name="College Cornicopia: April 2nd, 2022 from 3:00 to 5:00" /></li>
                         <li><EventCard name="Career Fair: April 7th, 2022 from 4:00 to 6:30" /></li>
-                        <li><EventCard name="Roger Martinez speaks about future opportunites in tech! May 3rd via Zoom." /></li>
+                        <li><EventCard name="Roger Martinez speaks about future opportunites in tech! May 3rd via Zoom." /></li> -->
                         <!-- Page Nav Buttons -->
                         <div class="btn-group pt-20">
                             <input type="radio" name="options" data-title="1" class="btn" checked/>

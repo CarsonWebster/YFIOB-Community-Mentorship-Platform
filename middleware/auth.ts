@@ -6,12 +6,19 @@
 //     }
 //   })
 
+import { ssrContextKey } from 'nuxt/dist/app/compat/capi'
 import useAuth from '~/composables/useAuth'
 
 export default defineNuxtRouteMiddleware((to, from) => {
-  const { isLoggedIn } = useAuth()
-  if (!isLoggedIn()) {
-    process.client && alert('This page requires authentication.')
-    return navigateTo('/')
-  }
+  // const { isLoggedIn } = useAuth()
+  // if (!isLoggedIn()) {
+  //   process.client && alert('This page requires authentication.')
+  //   return navigateTo('/')
+  // }
+  // const user = useSupabaseUser()
+  // console.log("middleware")
+  // console.log(user.value)
+  // if (!user.value) {
+  //   return navigateTo('/')
+  // }
 })

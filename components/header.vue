@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const {user, logout } = useAuth();
+</script>
+
 <template>
     <header class="p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-800">
     <div class="sm:flex sm:items-center sm:justify-between">
@@ -20,15 +24,9 @@
                 <a href="settings" class="mr-4 hover:underline md:mr-6 ">Account Settings</a>
             </li>
             <li>
-                <a onclick="signOut()" href="#" class="hover:underline">Sign-Out</a>
+                <a @click="logout()" href="/" class="hover:underline">Sign-Out</a>
             </li>
         </ul>
     </div>
     </header>
 </template>
-
-<script setup>
-async function signOut() {
-  const { error } = await supabase.auth.signOut()
-}
-</script>
