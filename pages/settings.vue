@@ -239,6 +239,7 @@ router.push('')
     <!-- Two colulms -->
     <div class="flex flex-row flex-wrap py-4">
         <!-- Sidebar -->
+        <!-- <p>Asside where are you?</p> -->
         <aside class="w-full sm:w-1/3 md:w-1/4 px-2 border-r-4">
             <div class="sticky top-0 p-4 w-full">
                 <!-- navigation -->
