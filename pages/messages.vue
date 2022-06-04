@@ -1,5 +1,10 @@
 <script setup lang="ts">
 
+// definePageMeta({
+// //   layout: false,
+//   middleware: 'auth'
+// });
+
 let mentors = ["Karim Benzema", "Ted Mosby", "Lily Aldrin","Robin Scherbatsky"];
 
 </script>

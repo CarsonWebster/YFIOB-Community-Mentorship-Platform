@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const {user, isLoggedIn } = useAuth();
 
-definePageMeta({
-  layout: false,
-  // middleware: 'auth'
-});
+// definePageMeta({
+//   // layout: false,
+//   middleware: 'auth'
+// });
 
 
 function log() {
@@ -15,12 +15,14 @@ function log() {
 </script>
 
 <template>
-  <Header />
-  <loginHome />
+<div>
+  <!-- <Header /> -->
+  <loginHome v-if='!user' />
+  <home v-else />
  
   <!-- Footer -->
-  <footer class="bg-[#5b50dd] w-auto h-48 flex justify-center items-center">
-      <!-- <h1 class="font-mono font-extrabold text-center text-4xl antialiased text-white"> </h1> -->
-  </footer>
+  <!-- <footer class="bg-[#5b50dd] w-auto h-48 flex justify-center items-center">
+  </footer> -->
+</div>
 </template>
 

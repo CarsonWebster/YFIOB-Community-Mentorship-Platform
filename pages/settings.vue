@@ -1,4 +1,8 @@
 <script setup lang="ts">
+// definePageMeta({
+// //   layout: false,
+//   middleware: 'auth'
+// });
 // import { useState, useEffect } from "react";
 // const email = ref('')
 // function printEmail() {
@@ -9,6 +13,8 @@ const {supabase} = useSupabase();
 // const user = useSupabaseUser();
 // const {user} = useAuth();
 const user = useSupabaseUser()
+const router = useRouter()
+
 
 // const session = supabase.auth.session();
 // const sessionID = session.user.id;
@@ -51,7 +57,7 @@ const { data: profile } = useAsyncData('profile', async () => {
   return profile
 })
 function printProfile() {
-    console.log('Yuh!')
+    console.log('printing Profile!')
     console.log(profile)
     console.log(profile.value)
     console.log(!!profile.value)
@@ -107,13 +113,16 @@ async function updateProfile() {
 async function setProfile() {
     console.log('USER')
     console.log(user.value)
-    if(!!getProfile()) {
+    console.log('Profile')
+    console.log(profile.value)
+    if(!profile.value) {
         console.log('No profile bruh')
         uploadProfile()
     }
     else {
         console.log('YUH profile bruh')
         updateProfile()
+        window.location.reload()
     }
 }
 
@@ -200,7 +209,7 @@ async function setProfile() {
 
 // testlog()
 // getProfile().then(value => { console.log(value.user_id) })
-
+router.push('')
 </script>
 
 <!-- <template>
