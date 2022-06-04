@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const {user, logout } = useAuth();
+const { logout } = useAuth();
 </script>
 
 <template>
@@ -12,16 +12,16 @@ const {user, logout } = useAuth();
         </a>
         <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
             <li>
-                <a href="home" class="mr-4 hover:underline md:mr-6 ">Home</a>
+                <a href="/home" class="mr-4 hover:underline md:mr-6 ">Home</a>
             </li>
             <li>
-                <a href="events" class="mr-4 hover:underline md:mr-6 ">Events</a>
+                <a href="/events" class="mr-4 hover:underline md:mr-6 ">Events</a>
             </li>
             <li>
-                <a href="messages" class="mr-4 hover:underline md:mr-6">Messages</a>
+                <a href="/messages" class="mr-4 hover:underline md:mr-6">Messages</a>
             </li>
             <li>
-                <a href="settings" class="mr-4 hover:underline md:mr-6 ">Account Settings</a>
+                <a href="/settings" class="mr-4 hover:underline md:mr-6 ">Account Settings</a>
             </li>
             <li>
                 <a @click="logout()" href="/" class="hover:underline">Sign-Out</a>

@@ -1,9 +1,10 @@
 <script setup lang="ts">
 
 // definePageMeta({
-//   layout: false,
+// //   layout: false,
 //   middleware: 'auth'
 // });
+const user = useSupabaseUser()
 const {supabase} = useSupabase()
 const { data: events } = useAsyncData('events', async () => {
     const { data: events, error } = await supabase.from('events').select('*')
@@ -15,9 +16,10 @@ const { data: events } = useAsyncData('events', async () => {
 </script>
 
 <template>
-    <TitleCard title="Browse Events" />
+    
     <!-- Page Container -->
-    <div class="container mx-auto">
+    <div v-if='!!user' class="container mx-auto">
+    <TitleCard title="Browse Events" />
     <!-- Two colulms -->
     <div class="flex flex-row flex-wrap py-4">
         <!-- Sidebar -->
@@ -45,7 +47,7 @@ const { data: events } = useAsyncData('events', async () => {
                 <button class="btn btn-xs">Age Range</button>
             </div>
             <!-- Results and List of Events -->
-            <div calss="flex space-x-2 py-6">
+            <div class="flex space-x-2 py-6">
                 <!-- <p class="font-mono text-lg font-bold inline-flex">Results:</p>
                 <button class="btn btn-xs">Age Range</button>
                 <button class="btn btn-xs">Age Range</button> -->
@@ -74,4 +76,5 @@ const { data: events } = useAsyncData('events', async () => {
         </main>
     </div>
 </div>
+<loginHome v-else />
 </template>
