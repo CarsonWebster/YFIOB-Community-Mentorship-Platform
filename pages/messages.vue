@@ -1,5 +1,6 @@
 <script setup lang="ts">
-
+const user = useSupabaseUser()
+const { isLoggedIn } = useAuth();
 // definePageMeta({
 // //   layout: false,
 //   middleware: 'auth'
@@ -10,6 +11,7 @@ let mentors = ["Karim Benzema", "Ted Mosby", "Lily Aldrin","Robin Scherbatsky"];
 </script>
 
 <template>
+<div v-if='isLoggedIn' >
 <title-card title="Messages" />
 <!-- Page Container -->
 <div class="mx-auto">
@@ -48,4 +50,6 @@ let mentors = ["Karim Benzema", "Ted Mosby", "Lily Aldrin","Robin Scherbatsky"];
         </main>
     </div>
 </div>
+</div>
+<loginHome v-else />
 </template>

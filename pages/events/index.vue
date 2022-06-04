@@ -5,6 +5,7 @@
 //   middleware: 'auth'
 // });
 const user = useSupabaseUser()
+const { isLoggedIn } = useAuth();
 const {supabase} = useSupabase()
 const { data: events } = useAsyncData('events', async () => {
     const { data: events, error } = await supabase.from('events').select('*')
@@ -18,7 +19,7 @@ const { data: events } = useAsyncData('events', async () => {
 <template>
     
     <!-- Page Container -->
-    <div v-if='!!user' class="container mx-auto">
+    <div v-if='isLoggedIn' class="container mx-auto">
     <TitleCard title="Browse Events" />
     <!-- Two colulms -->
     <div class="flex flex-row flex-wrap py-4">

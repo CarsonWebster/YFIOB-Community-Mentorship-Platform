@@ -13,6 +13,7 @@ const {supabase} = useSupabase();
 // const user = useSupabaseUser();
 // const {user} = useAuth();
 const user = useSupabaseUser()
+const { isLoggedIn } = useAuth();
 const router = useRouter()
 
 
@@ -231,7 +232,7 @@ router.push('')
       </label>
 </template> -->
 <template>
-<div>
+<div v-if="isLoggedIn" >
     <title-card title="Account Settings" />
     <!-- Page Container -->
     <div class="container mx-auto">
@@ -345,4 +346,5 @@ router.push('')
     </div>
 </div>
 </div>
+<loginHome v-else />
 </template>
