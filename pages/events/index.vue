@@ -19,7 +19,7 @@ const { data: events } = useAsyncData('events', async () => {
 <template>
     
     <!-- Page Container -->
-    <div v-if='isLoggedIn' class="container mx-auto">
+    <div v-if='isLoggedIn()' class="container mx-auto">
     <TitleCard title="Browse Events" />
     <!-- Two colulms -->
     <div class="flex flex-row flex-wrap py-4">

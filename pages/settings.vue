@@ -232,7 +232,7 @@ router.push('')
       </label>
 </template> -->
 <template>
-<div v-if="isLoggedIn" >
+<div v-if="isLoggedIn()" >
     <title-card title="Account Settings" />
     <!-- Page Container -->
     <div class="container mx-auto">

@@ -11,13 +11,15 @@ function log() {
   console.log(user)
   console.log(isLoggedIn())
 }
-
+console.log('ahhh')
+console.log(user.value)
+console.log(isLoggedIn())
 </script>
 
 <template>
 <div>
   <!-- <Header /> -->
-  <loginHome v-if='!user' />
+  <loginHome v-if='!isLoggedIn()' />
   <home v-else />
  
   <!-- Footer -->
